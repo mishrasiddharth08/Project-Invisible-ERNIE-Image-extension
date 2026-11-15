@@ -1,5 +1,7 @@
 # Project Invisible ERNIE Image
 
+**Backup extension.** This repository preserves Forge Neo's ERNIE Image implementation in case built-in support goes away in a future update. This release still requires a Forge Neo build with native ERNIE support. A build that removes that support would need a compatibility update.
+
 A Forge Neo extension extracted from the [Forge Neo ERNIE implementation](https://github.com/Haoming02/sd-webui-forge-classic/tree/neo). It packages the ERNIE diffusion engine, transformer and Ministral prompt conditioning. Forge supplies checkpoint detection, quantized loading, tokenizer, encoder model, VAE, adapter mapping, sampling and the normal UI/API workflow.
 
 ## Install and generate
