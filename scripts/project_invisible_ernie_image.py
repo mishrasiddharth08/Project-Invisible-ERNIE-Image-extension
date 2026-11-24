@@ -1,10 +1,16 @@
 from logging import getLogger
 
-from pi_ernie_image.registration import register
+from modules import script_callbacks
 
+logger = getLogger(__name__)
 
 try:
-    if not register():
-        getLogger(__name__).info("Project Invisible ERNIE Image: using the host engine.")
-except (AttributeError, ImportError, OSError):
-    getLogger(__name__).info("Project Invisible ERNIE Image: host integration unavailable.")
+    from pi_ernie_image.registration import register, unregister
+
+    register()
+    script_callbacks.on_script_unloaded(unregister)
+except Exception:
+    logger.exception(
+        "Project Invisible ERNIE Image could not start. "
+        "Update the extension and Forge Neo, then restart. ERNIE generation is unavailable."
+    )

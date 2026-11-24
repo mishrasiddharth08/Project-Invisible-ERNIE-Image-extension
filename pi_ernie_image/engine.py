@@ -1,5 +1,5 @@
 import torch
-from huggingface_guess import model_list
+from . import model_config as model_list
 
 from backend import memory_management
 from backend.diffusion_engine.base import ForgeDiffusionEngine, ForgeObjects
